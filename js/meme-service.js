@@ -10,24 +10,17 @@ function setChosenMeme(imgId, elImage) {
         selectedLineIdx: 0,
         lines: [
             {
-                txt: 'Test Uno',
+                txt: 'First line weeee',
                 size: 40,
                 align: 'center',
                 posY: 50,
                 color: 'red',
             },
             {
-                txt: 'Test Dos',
+                txt: 'Second line dooog',
                 size: 30,
-                align: 'right',
+                align: 'center',
                 posY: 150,
-                color: 'red',
-            },
-            {
-                txt: 'Test Tres',
-                size: 30,
-                align: 'right',
-                posY: 200,
                 color: 'red',
             }
         ]
@@ -54,12 +47,12 @@ function decreaseFontBy1() {
 
 function moveTxtUpBy1() {
     var txtIdx = gMeme.selectedLineIdx
-    gMeme.lines[txtIdx].posY -= 3
+    gMeme.lines[txtIdx].posY -= 10
 }
 
 function moveTxdownBy1() {
     var txtIdx = gMeme.selectedLineIdx
-    gMeme.lines[txtIdx].posY += 3
+    gMeme.lines[txtIdx].posY += 10
 }
 
 function changeTxtFocus() {

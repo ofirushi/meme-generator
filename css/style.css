@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -13,8 +14,20 @@ html {
     letter-spacing: normal;
 }
 
+body {
+    background-color: blue;
+}
+
+main {
+    background: green;
+}
+
+footer {
+    background-color: pink;
+    height: 70px;
+}
+
 header {
-    grid-column: 1/-1;
     background-color: #ff7f00;
     width: 100%;
     height: 70px;
@@ -77,17 +90,17 @@ a {
 }
 
 .gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-row-gap: 22px;
+    display: flex;
+    flex-wrap: wrap;
     background-color: #e3e3e3;
-    justify-items: center;
     padding: 1.5625em;
+    justify-content: center;
 }
 
 .gallery-container img {
     width: 250px;
     height: 250px;
+    padding: 0.78125em;
 }
 
 h6 {
@@ -99,34 +112,30 @@ h6 {
     margin-inline-end: none;
 }
 
+.editor-page {
+    background-color: #e3e3e3;
+}
+
 canvas {
-    /* margin: 20px; */
+    margin: 1.5625em;
     border: 1px solid black;
     cursor: crosshair;
 }
 
-.editor-page {
-    background-color: #e3e3e3;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(0px, 1fr));
-    /* grid-row-gap: 22px; */
-    justify-items: center;
-    padding: 1.5625em;
-}
-
 .control-box {
     display: inline-block;
-    padding-left: 3.125em;
-    padding-right: 3.125em;
+    margin: 1.5625em;
 }
 
 #line-txt {
-    width: 100%;
     height: 3.125em;
-    display: block;
     appearance: none;
-    border:none;
+    border: none;
     text-align: center;
     border-radius: 12px;
     background-color: #ffffff;
+}
+
+.gallery-page {
+    flex-grow: 1;
 }

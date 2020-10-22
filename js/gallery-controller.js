@@ -7,7 +7,7 @@ function onInit() {
 
 function onImageClick(imgId,elImage) {
     document.querySelector('.gallery-page').style.display = 'none'
-    document.querySelector('.editor-page').style.display = 'flex'
+    document.querySelector('.editor-page').style.display = 'block'
     loadMemeEditor(imgId, elImage)
 }
 

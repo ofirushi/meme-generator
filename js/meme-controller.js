@@ -75,4 +75,6 @@ function onMoveTxtDown(){
 
 function onTxtFocusChange(){
     changeTxtFocus()
+    var meme = getCurrMeme()
+    updateTxtInputValue(meme)
 }
