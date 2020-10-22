@@ -3,8 +3,9 @@
 var gMeme
 
 
-function setChosenMeme(imgId) {
+function setChosenMeme(imgId, elImage) {
     gMeme = {
+        elImage,
         selectedImgId: imgId,
         selectedLineIdx: 0,
         lines: []

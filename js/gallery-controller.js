@@ -5,15 +5,15 @@ function onInit() {
     renderImgs(imgs)
 }
 
-function onImageClick(imgId) {
+function onImageClick(imgId,elImage) {
     document.querySelector('.gallery-page').style.display = 'none'
     document.querySelector('.editor-page').style.display = 'block'
-    loadMemeEditor(imgId)
+    loadMemeEditor(imgId, elImage)
 }
 
 function renderImgs(imgs) {
     var strHtmls = imgs.map((img) => {
-        return `<img onclick="onImageClick(${img.id})" src=${img.url} alt=""></img>`
+        return `<img onclick="onImageClick(${img.id},this)" src=${img.url} alt=""></img>`
     })
     document.querySelector('.gallery-container').innerHTML = strHtmls.join('')
 }

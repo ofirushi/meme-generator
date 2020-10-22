@@ -90,7 +90,7 @@ a {
     height: 250px;
 }
 
-h6{
+h6 {
     display: block;
     font: inherit;
     margin-block-start: none;
@@ -99,16 +99,16 @@ h6{
     margin-inline-end: none;
 }
 
-canvas{
+canvas {
     margin: 20px;
     border: 1px solid black;
-cursor: crosshair;
+    cursor: crosshair;
 }
 
-.editor-page{
+.editor-page {
     background-color: #e3e3e3;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(0px, 1fr));
     /* grid-row-gap: 22px; */
     justify-items: center;
     padding: 1.5625em;
