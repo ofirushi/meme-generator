@@ -43,7 +43,18 @@
         </div>
 
         <div class="editor-page" style="display: none;">
-            <canvas id="my-canvas" onmousemove="handleMouse(event)"  ></canvas>
+            <canvas id="my-canvas" onmousemove="handleMouse(event)"></canvas>
+                <div class="control-box">
+                    <input onchange="onTxtInptChange(this);" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" type="text" name="line-txt" id="line-txt" placeholder="">
+                    <img onclick="onTxtFocusChange()" width="60px" height="60px" src="img/icon/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
+                    <div>
+                        <img onclick="onMoveTxtUp()" width="30px" height="60px" src="img/icon/up-arrow.png" alt=""> 
+                        <img onclick="onIncreaseFont()" width="60px" height="60px" src="img/icon/increase font - icon.png" alt="">
+                        <img onclick="onDecreaseFont()" width="60px" height="60px" src="img/icon/decrease font - icon.png" alt="">
+                        <img onclick="onMoveTxtDown()" width="30px" height="60px" src="img/icon/down-arrow.png" alt="">
+                    </div>
+                </div>
+
         </div>
 
     </main>
@@ -53,8 +64,8 @@
     <script src="js/util-service.js"></script>
     <script src="js/gallery-controller.js"></script>
     <script src="js/gallery-service.js"></script>
-    <script src="js/meme-controller.js"></script>
     <script src="js/meme-service.js"></script>
+    <script src="js/meme-controller.js"></script>
 </body>
 
 </html>
