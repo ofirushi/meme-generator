@@ -13,6 +13,7 @@ function loadMemeEditor(imgId){
 function loadCanvas(){
     var meme = getCurrMeme()
     var elImage = new Image();
+    elImage.onload
     elImage.src = `../img/gallery/${meme.selectedImgId}.jpg`
     document.querySelector('.editor-page').innerHTML=`
     <canvas id="my-canvas" onmousemove="handleMouse(event)" width=${elImage.width} height=${elImage.height}  ></canvas>
