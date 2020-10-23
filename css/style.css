@@ -121,11 +121,7 @@ h6 {
     background-color: #e3e3e3;
 }
 
-canvas {
-    margin: 1.5625em;
-    border: 1px solid black;
-    cursor: crosshair;
-}
+
 
 .control-box {
     display: inline-block;
@@ -141,6 +137,19 @@ canvas {
     background-color: #ffffff;
 }
 
-.gallery-page {
-    /* flex-grow: 1; */
+/* pc */
+@media only screen and (min-width: 580px) {
+    canvas {
+        margin: 1.5625em;
+        border: 1px solid black;
+        cursor: crosshair;
+    }
+}
+
+/* phones */
+@media only screen and (max-width: 580px) {
+    #my-canvas{
+        height: 100%;
+        width: 100%;
+    }
 }
