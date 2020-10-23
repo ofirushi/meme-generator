@@ -31,17 +31,6 @@ footer {
     height: 70px;
 }
 
-header {
-    background-color: #ff7f00;
-    height: 70px;
-}
-
-.right-side {
-    float: right;
-    margin-right: 3.125em;
-    margin-top: 25px;
-}
-
 .right-side a {
     margin-left: 1.5625em;
     text-decoration: none;
@@ -121,8 +110,6 @@ h6 {
     background-color: #e3e3e3;
 }
 
-
-
 .control-box {
     display: inline-block;
     margin: 1.5625em;
@@ -138,18 +125,86 @@ h6 {
 }
 
 /* pc */
-@media only screen and (min-width: 580px) {
+
+@media only screen and (min-width: 600px) {
     canvas {
+        display: inline-block;
         margin: 1.5625em;
         border: 1px solid black;
         cursor: crosshair;
+        /* height: 100%; */
+        /* width: 100%; */
+    }
+    .desktop-head {
+        display: block;
+        background-color: #ff7f00;
+        height: 70px;
+    }
+    .mobile-head {
+        display: none;
+    }
+    .right-side {
+        float: right;
+        margin-right: 3.125em;
+        margin-top: 25px;
     }
 }
 
 /* phones */
-@media only screen and (max-width: 580px) {
-    #my-canvas{
+
+@media only screen and (max-width: 600px) {
+    #my-canvas {
         height: 100%;
         width: 100%;
+        display: inline-block;
     }
+    .desktop-head {
+        display: none;
+    }
+    .mobile-head {
+        display: block;
+        background-color: #ff7f00;
+        /* height: 70px; */
+    }
+    .topnav {
+        background-color: #ff7f00;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .topnav #myLinks {
+        display: none;
+      }
+      
+      .topnav a {
+        /* background-color: #333; */
+        
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+        color: black;
+      }
+      
+      .topnav a.icon {
+        /* background: black; */
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      
+      .topnav a:hover {
+        background-color: #ddd;
+        color: white;
+      }
+      
+      .active {
+        background-color: #ff7f00;
+        color: white;
+      }
+
+      #myLinks{
+          background-color: #e3e3e3;
+      }
 }

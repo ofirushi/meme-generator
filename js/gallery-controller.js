@@ -17,3 +17,13 @@ function renderImgs(imgs) {
     })
     document.querySelector('.gallery-container').innerHTML = strHtmls.join('')
 }
+
+function openNavMobile(){
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+    console.log('open nav')
+}

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme generator</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body onload="onInit();">
-    <header>
+<body onchange="changeSize()" onload="onInit();">
+    <header class="desktop-head">
         <nav>
             <div class="top-nav">
                 <a class="logo" href="index.html"><img src="img/logo/layer-2.png" alt=""></a>
@@ -23,6 +24,20 @@
         </nav>
     </header>
 
+    <header class="mobile-head">
+        <div class="topnav">
+            <a href="index.html" class="active"><img src="img/logo/layer-2.png" alt=""></a>
+            <div id="myLinks">
+                <a href="#gallery">Gallery</a>
+                <a href="#memes">Saved Memes</a>
+                <a href="#about">About</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="openNavMobile()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+          
+    </header>
     <main>
 
         <div class="gallery-page">
