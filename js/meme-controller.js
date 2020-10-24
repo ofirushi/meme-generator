@@ -10,7 +10,12 @@ function loadMemeEditor(imgId, elImage) {
     renderCanvas()
 }
 
-
+function loadCanvasMini(meme) {
+    setCurrMeme(meme)
+    gCanvas = document.querySelector('#my-canvas');
+    gCtx = gCanvas.getContext('2d');
+    renderCanvas()
+}
 
 function renderCanvas() {
     var meme = getCurrMeme()
@@ -31,8 +36,8 @@ function drawText(meme) {
         gCtx.textAlign = line.align;
         gCtx.font = line.size + 'px impact'
         gCtx.fillStyle = line.color
-        gCtx.strokeText(line.txt, gCanvas.width/2, line.posY);
-        gCtx.fillText(line.txt, gCanvas.width/2, line.posY);
+        gCtx.strokeText(line.txt, gCanvas.width / 2, line.posY);
+        gCtx.fillText(line.txt, gCanvas.width / 2, line.posY);
     })
 }
 
@@ -46,8 +51,8 @@ function onLoadTxtInpt(elTxtInput) {
 }
 
 function onTxtInptChange(elTxtInput) {
-updateMemeTxt(elTxtInput.value)
-renderCanvas()
+    updateMemeTxt(elTxtInput.value)
+    renderCanvas()
 }
 
 function updateTxtInputValue(meme) {
@@ -55,26 +60,31 @@ function updateTxtInputValue(meme) {
     document.getElementById('line-txt').value = meme.lines[txtIdx].txt
 }
 
-function onIncreaseFont(){
+function onIncreaseFont() {
     increaseFontBy1()
     renderCanvas()
 }
-function onDecreaseFont(){
+function onDecreaseFont() {
     decreaseFontBy1()
     renderCanvas()
 }
 
-function onMoveTxtUp(){
+function onMoveTxtUp() {
     moveTxtUpBy1()
     renderCanvas()
 }
-function onMoveTxtDown(){
+function onMoveTxtDown() {
     moveTxdownBy1()
     renderCanvas()
 }
 
-function onTxtFocusChange(){
+function onTxtFocusChange() {
     changeTxtFocus()
     var meme = getCurrMeme()
     updateTxtInputValue(meme)
 }
+
+function onSaveMeme() {
+    addMemeToStorage()
+}
+

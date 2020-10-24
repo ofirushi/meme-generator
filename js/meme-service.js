@@ -1,7 +1,7 @@
 'use strict'
 
 var gMeme
-
+const DB_KEY = 'memeDB'
 
 function setChosenMeme(imgId, elImage) {
     gMeme = {
@@ -25,6 +25,10 @@ function setChosenMeme(imgId, elImage) {
             }
         ]
     }
+}
+
+function setCurrMeme(meme){
+gMeme = meme
 }
 
 function getCurrMeme() {
@@ -57,4 +61,15 @@ function moveTxdownBy1() {
 
 function changeTxtFocus() {
     gMeme.selectedLineIdx = (gMeme.selectedLineIdx === gMeme.lines.length - 1) ? 0 : ++gMeme.selectedLineIdx
+}
+
+function loadMemesFromStorage(){
+    return loadFromStorage(DB_KEY)
+}
+
+function addMemeToStorage(){
+   var memeStorage = loadFromStorage(DB_KEY)
+   if(!memeStorage)memeStorage=[]
+   memeStorage.push(gMeme) 
+   saveToStorage(DB_KEY,memeStorage)
 }

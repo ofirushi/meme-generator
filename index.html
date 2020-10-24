@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  lang="en">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body onchange="changeSize()" onload="onInit();">
+<body onload="onInit();">
     <header class="desktop-head">
         <nav>
             <div class="top-nav">
                 <a class="logo" href="index.html"><img src="img/logo/layer-2.png" alt=""></a>
 
                 <div class="right-side">
-                    <a class="active" href="#gallery">Gallery</a>
-                    <a href="#memes">Saved Memes</a>
+                    <a onclick="onGalleryClick()" class="active" href="#gallery">Gallery</a>
+                    <a onclick="onMemesClick()" href="#memes">Saved Memes</a>
                     <a href="#about">About</a>
                 </div>
             </div>
@@ -28,15 +28,15 @@
         <div class="topnav">
             <a href="index.html" class="active"><img src="img/logo/layer-2.png" alt=""></a>
             <div id="myLinks">
-                <a href="#gallery">Gallery</a>
-                <a href="#memes">Saved Memes</a>
+                <a onclick="onGalleryClick()" href="#gallery">Gallery</a>
+                <a onclick="onMemesClick()" href="#memes">Saved Memes</a>
                 <a href="#about">About</a>
             </div>
             <a href="javascript:void(0);" class="icon" onclick="openNavMobile()">
-              <i class="fa fa-bars"></i>
+                <i class="fa fa-bars"></i>
             </a>
-          </div>
-          
+        </div>
+
     </header>
     <main>
 
@@ -59,29 +59,42 @@
 
         <div class="editor-page" style="display: none;">
             <canvas id="my-canvas" onmousemove="handleMouse(event)"></canvas>
-                <div class="control-box">
-                    <input onchange="onTxtInptChange(this);" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" type="text" name="line-txt" id="line-txt" placeholder="">
-                    <img onclick="onTxtFocusChange()" width="60px" height="60px" src="img/icon/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
-                    <div>
-                        <img onclick="onMoveTxtUp()" width="30px" height="60px" src="img/icon/up-arrow.png" alt=""> 
-                        <img onclick="onIncreaseFont()" width="60px" height="60px" src="img/icon/increase font - icon.png" alt="">
-                        <img onclick="onDecreaseFont()" width="60px" height="60px" src="img/icon/decrease font - icon.png" alt="">
-                        <img onclick="onMoveTxtDown()" width="30px" height="60px" src="img/icon/down-arrow.png" alt="">
-                    </div>
+            <div class="control-box">
+                <input onchange="onTxtInptChange(this);" onkeypress="this.onchange();" onpaste="this.onchange();"
+                    oninput="this.onchange();" type="text" name="line-txt" id="line-txt" placeholder="">
+                <img onclick="onTxtFocusChange()" width="60px" height="60px"
+                    src="img/icon/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
+                <div>
+                    <img onclick="onMoveTxtUp()" width="30px" height="60px" src="img/icon/up-arrow.png" alt="">
+                    <img onclick="onIncreaseFont()" width="60px" height="60px" src="img/icon/increase font - icon.png"
+                        alt="">
+                    <img onclick="onDecreaseFont()" width="60px" height="60px" src="img/icon/decrease font - icon.png"
+                        alt="">
+                    <img onclick="onMoveTxtDown()" width="30px" height="60px" src="img/icon/down-arrow.png" alt="">
                 </div>
+                <div>
+                    <button onclick="onSaveMeme()">save</button>
+                </div>
+            </div>
 
         </div>
 
+        <div class="saved-meme">
+            
+
+        </div>
     </main>
-    
-<footer> </footer>
+
+    <footer> </footer>
 
 
     <script src="js/util-service.js"></script>
-    <script src="js/gallery-controller.js"></script>
+    <script src="js/storage-service.js"></script>
+    <script src="js/main-controller.js"></script>
     <script src="js/gallery-service.js"></script>
     <script src="js/meme-service.js"></script>
     <script src="js/meme-controller.js"></script>
+    <script src="js/saved-memes-controller.js"></script>
 </body>
 
 </html>
